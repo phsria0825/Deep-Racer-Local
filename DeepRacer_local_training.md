@@ -67,7 +67,9 @@ pip install boto
 access key 생성 방법
 1. 아마존 사이트 이동 : https://aws.amazon.com/ko/
 2. 우측 상단의 `내 계정` - `보안 자격증명` - `액세스 키` - `액세스 키 만들기`에서 엑세스 키 생성
+    
     <img src="AWS_KEY.png">
+    
     **중요!! 나중에 ubuntu에 AWS CLI설치후, 액세스 키, 비밀 액세스 키가 필요하니 잘적어둔다.**
 3. ubuntu 명령창에서 AWS CLI 설치
 
