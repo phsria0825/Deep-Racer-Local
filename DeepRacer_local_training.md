@@ -67,9 +67,7 @@ pip install boto
 access key 생성 방법
 1. 아마존 사이트 이동 : https://aws.amazon.com/ko/
 2. 우측 상단의 `내 계정` - `보안 자격증명` - `액세스 키` - `액세스 키 만들기`에서 엑세스 키 생성
-    
     <img src="AWS_KEY.png">
-    
     **중요!! 나중에 ubuntu에 AWS CLI설치후, 액세스 키, 비밀 액세스 키가 필요하니 잘적어둔다.**
 3. ubuntu 명령창에서 AWS CLI 설치
 
@@ -157,9 +155,23 @@ dr-start-training
 ```
 
 ## 10. 모델을 s3에 업로드
+**Sagemaker must be running for this to work**
+**따라서, 훈령중 ctrl + z를 눌러서 멈춘뒤, 아래 명령어를 입력해야 모델이 제대로 올라가서 AWS Deepracer 콘솔에서 import 할수있고 실제 차량에도 탑재가 가능해진다.**
+
+1. Virtual DRFC Upload
+
+Uploads best checkpoint to s3
 ```bash
 dr-set-upload-model
 ```
+
+2. Physical DRFC Upload
+Sagemaker must be running for this to work
+Only uses last checkpoint, not best
+```bash
+dr-upload-car-zip
+```
+
 
 ## 11. EORROR발생시 재설치 하지말고 아래 명령어를 순차적으로 입력
 ```bash
@@ -178,3 +190,5 @@ dr-start-training
 
 **reference**
 https://github.com/phsria0825/deepracer-for-cloud/tree/6ac72fd577be06a2203ba121711de84d4c9dedda/docs
+
+https://wiki.deepracing.io/Customise_Local_Training
